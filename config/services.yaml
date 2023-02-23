@@ -21,4 +21,7 @@ services:
             - '../src/Kernel.php'
 
     # add more service definitions when explicit configuration is needed
+    App\OpenApi\JwtDecorator:
+        decorates: 'api_platform.openapi.factory'
+        arguments: ['@.inner']
     # please note that last definitions always *replace* previous ones
